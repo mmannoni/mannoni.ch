@@ -36,7 +36,7 @@ $subscriptionId = '***'
 
 # Connect to Azure and set context to target tenant
 Connect-AzAccount
-$azcontext = Get-AzSubscription -SubscriptionId $subscriptionid
+$azcontext = Get-AzSubscription -SubscriptionId $subscriptionId
 Set-AzContext $azcontext
 
 # Query all NSGs
