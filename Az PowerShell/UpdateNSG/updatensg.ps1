@@ -29,14 +29,15 @@ $ErrorActionPreference = 'Stop'
 #----------------------------------------------------------[Declarations]----------------------------------------------------------
 
 # Declaring tenant and subscription ID
-$tenantId = '***'
+
 $subscriptionId = '***'
 
 #-----------------------------------------------------------[Execution]------------------------------------------------------------
 
 # Connect to Azure and set context to target tenant
 Connect-AzAccount
-$azContext = Set-AzContext -TenantId $tenantId -SubscriptionId $subscriptionId
+$azcontext = Get-AzSubscription -SubscriptionId $subscriptionid
+Set-AzContext $azcontext
 
 # Query all NSGs
 $nsgs = Get-AzNetworkSecurityGroup | Where-Object Name -Match '^***-***-***'
